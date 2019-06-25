@@ -1,0 +1,48 @@
+Install kubectl binary with curl on Linux
+
+download version v1.15.0 on Linux
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl
+
+Make the kubectl binary executable.
+
+chmod +x ./kubectl
+
+
+Move the binary in to your PATH.
+
+sudo mv ./kubectl /usr/local/bin/kubectl
+
+kubectl version
+
+
+
+..............................
+
+Download the Amazon EKS-vended aws-iam-authenticator binary from Amazon S3:
+
+curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/linux/amd64/aws-iam-authenticator
+
+cp -r aws-iam-authenticator /usr/local/bin/kubectl
+
+
+
+chmod +x ./aws-iam-authenticator
+
+aws-iam-authenticator help
+
+
+,..................................
+
+
+Install Terraform on Centos 7
+
+sudo yum install wget unzip
+
+
+wget https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip
+
+ sudo unzip ./terraform_0.11.13_linux_amd64.zip -d /usr/local/bin/
+ 
+ 
+ terraform -v
