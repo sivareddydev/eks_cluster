@@ -37,8 +37,13 @@ aws-iam-authenticator help
 
 Install Terraform on Centos 7
 
-
 sudo yum install wget unzip
+
+
+
+
+
+
 
 
 wget https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip
@@ -47,22 +52,44 @@ wget https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_am
  
  
  terraform -v
-
-
-............................................
-
-
-# aws-eks-terraform
-
-# Initializing and create EKS cluster
-terraform init
-terraform apply  
-
-# Generate kubeconfig and configmap for adding worker nodes
-terraform output kubeconfig > ./kubeconfig
-terraform output config_map_aws_auth > ./config_map_aws_auth.yaml
-
-# Apply configmap for worker nodes to join the cluster
-export KUBECONFIG=./kubeconfig
-kubectl apply -f ./config_map_aws_auth.yaml
-kubectl get nodes --watch
+ 
+ 
+ .........................
+ 
+ 
+ Install pip
+ 
+ 
+ 
+ curl -O https://bootstrap.pypa.io/get-pip.py
+ 
+ python get-pip.p
+ 
+ 
+pip install awscli==1.6.6
+ 
+ 
+ 
+ aws --version
+ 
+ 
+ aws configure
+.......................................
+ 
+ docker install
+ 
+ 
+ curl -fsSL https://get.docker.com -o get-docker.sh
+ 
+ sh get-docker.sh
+ 
+ ............................................................
+ 
+ helm install 
+ 
+ https://get.helm.sh/helm-v3.0.0-alpha.1-linux-amd64.tar.gz
+ 
+ 
+ tar -xvf helm-v3.0.0-alpha.1-linux-amd64.tar.gz
+ 
+ 
